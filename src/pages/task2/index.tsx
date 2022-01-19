@@ -26,7 +26,11 @@ export default function Task2() {
     const onFormSubmit = (e: any) => {
         e.preventDefault(); // stop the page from refreshing;
         if(selectedCurrency === "NONE") {
-            setErrorMessage("Please select a currency from the dropdown.")
+            setErrorMessage("Please select a currency from the dropdown.");
+            return;
+        }
+        if(currencyInput <= 0) {
+            setErrorMessage("Input must be greater than 0.");
             return;
         }
         setErrorMessage("")
